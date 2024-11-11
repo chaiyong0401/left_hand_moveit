@@ -1,0 +1,29 @@
+controller_list:
+  - name: fake_fingers_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - aa1
+      - act1
+      - mcp1
+      - pip1
+      - dip1
+      - aa2
+      - act2
+      - mcp2
+      - pip2
+      - dip2
+      - aa3
+      - act3
+      - mcp3
+      - pip3
+      - dip3
+      - aa4
+      - act4
+      - mcp4
+      - pip4
+      - dip4
+initial:  # Define initial robot poses per group
+#  - group: fingers
+#    pose: home
+
+  []

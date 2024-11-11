@@ -1,0 +1,124 @@
+fingers_controller:
+  type: effort_controllers/JointTrajectoryController
+  joints:
+    - aa1
+    - act1
+    - mcp1
+    - pip1
+    - dip1
+    - aa2
+    - act2
+    - mcp2
+    - pip2
+    - dip2
+    - aa3
+    - act3
+    - mcp3
+    - pip3
+    - dip3
+    - aa4
+    - act4
+    - mcp4
+    - pip4
+    - dip4
+  gains:
+    aa1:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    act1:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    mcp1:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    pip1:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    dip1:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    aa2:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    act2:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    mcp2:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    pip2:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    dip2:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    aa3:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    act3:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    mcp3:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    pip3:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    dip3:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    aa4:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    act4:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    mcp4:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    pip4:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    dip4:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1

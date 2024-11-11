@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This does not replace URDF, and is not an extension of URDF.
+    This is a format for representing semantic information about the robot structure.
+    A URDF file must exist for this robot as well, where the joints and the links that are referenced are defined
+-->
+<robot name="left_hand_urdf">
+    <!--GROUPS: Representation of a set of joints and links. This can be useful for specifying DOF to plan for, defining arms, end effectors, etc-->
+    <!--LINKS: When a link is specified, the parent joint of that link (if it exists) is automatically included-->
+    <!--JOINTS: When a joint is specified, the child link of that joint (which will always exist) is automatically included-->
+    <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
+    <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
+    <group name="fingers">
+        <joint name="aa1"/>
+        <joint name="act1"/>
+        <joint name="mcp1"/>
+        <joint name="pip1"/>
+        <joint name="dip1"/>
+        <joint name="aa2"/>
+        <joint name="act2"/>
+        <joint name="mcp2"/>
+        <joint name="pip2"/>
+        <joint name="dip2"/>
+        <joint name="aa3"/>
+        <joint name="act3"/>
+        <joint name="mcp3"/>
+        <joint name="pip3"/>
+        <joint name="dip3"/>
+        <joint name="aa4"/>
+        <joint name="act4"/>
+        <joint name="mcp4"/>
+        <joint name="pip4"/>
+        <joint name="dip4"/>
+    </group>
+    <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
+    <virtual_joint name="world_vjoint" type="fixed" parent_frame="world" child_link="base_link"/>
+    <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
+    <disable_collisions link1="act1_1" link2="base_link" reason="Never"/>
+    <disable_collisions link1="act1_1" link2="dp1_1" reason="Never"/>
+    <disable_collisions link1="act1_1" link2="mcp1_1" reason="Adjacent"/>
+    <disable_collisions link1="act1_1" link2="mcp2_1" reason="Never"/>
+    <disable_collisions link1="act1_1" link2="meta2_1" reason="Never"/>
+    <disable_collisions link1="act2_1" link2="base_link" reason="Never"/>
+    <disable_collisions link1="act2_1" link2="mcp2_1" reason="Adjacent"/>
+    <disable_collisions link1="act3_1" link2="base_link" reason="Never"/>
+    <disable_collisions link1="act3_1" link2="mcp3_1" reason="Adjacent"/>
+    <disable_collisions link1="act4_1" link2="base_link" reason="Never"/>
+    <disable_collisions link1="act4_1" link2="mcp4_1" reason="Adjacent"/>
+    <disable_collisions link1="base_link" link2="mcp1_1" reason="Never"/>
+    <disable_collisions link1="base_link" link2="mcp2_1" reason="Never"/>
+    <disable_collisions link1="base_link" link2="mcp3_1" reason="Never"/>
+    <disable_collisions link1="base_link" link2="mcp4_1" reason="Never"/>
+    <disable_collisions link1="base_link" link2="meta1_1" reason="Adjacent"/>
+    <disable_collisions link1="base_link" link2="meta2_1" reason="Adjacent"/>
+    <disable_collisions link1="base_link" link2="meta3_1" reason="Adjacent"/>
+    <disable_collisions link1="base_link" link2="meta4_1" reason="Adjacent"/>
+    <disable_collisions link1="base_link" link2="pp2_1" reason="Never"/>
+    <disable_collisions link1="base_link" link2="pp3_1" reason="Never"/>
+    <disable_collisions link1="base_link" link2="pp4_1" reason="Never"/>
+    <disable_collisions link1="dp1_1" link2="mcp1_1" reason="Never"/>
+    <disable_collisions link1="dp1_1" link2="mp1_1" reason="Adjacent"/>
+    <disable_collisions link1="dp1_1" link2="pp1_1" reason="Never"/>
+    <disable_collisions link1="dp2_1" link2="mp2_1" reason="Adjacent"/>
+    <disable_collisions link1="dp3_1" link2="mp3_1" reason="Adjacent"/>
+    <disable_collisions link1="dp4_1" link2="mp4_1" reason="Adjacent"/>
+    <disable_collisions link1="mcp1_1" link2="mcp2_1" reason="Never"/>
+    <disable_collisions link1="mcp1_1" link2="meta1_1" reason="Adjacent"/>
+    <disable_collisions link1="mcp1_1" link2="meta2_1" reason="Never"/>
+    <disable_collisions link1="mcp1_1" link2="mp1_1" reason="Never"/>
+    <disable_collisions link1="mcp1_1" link2="pp1_1" reason="Adjacent"/>
+    <disable_collisions link1="mcp2_1" link2="mcp4_1" reason="Never"/>
+    <disable_collisions link1="mcp2_1" link2="meta1_1" reason="Never"/>
+    <disable_collisions link1="mcp2_1" link2="meta2_1" reason="Adjacent"/>
+    <disable_collisions link1="mcp2_1" link2="meta4_1" reason="Never"/>
+    <disable_collisions link1="mcp2_1" link2="pp2_1" reason="Adjacent"/>
+    <disable_collisions link1="mcp3_1" link2="meta1_1" reason="Never"/>
+    <disable_collisions link1="mcp3_1" link2="meta3_1" reason="Adjacent"/>
+    <disable_collisions link1="mcp3_1" link2="pp3_1" reason="Adjacent"/>
+    <disable_collisions link1="mcp4_1" link2="meta1_1" reason="Never"/>
+    <disable_collisions link1="mcp4_1" link2="meta2_1" reason="Never"/>
+    <disable_collisions link1="mcp4_1" link2="meta4_1" reason="Adjacent"/>
+    <disable_collisions link1="mcp4_1" link2="pp4_1" reason="Adjacent"/>
+    <disable_collisions link1="meta1_1" link2="meta2_1" reason="Never"/>
+    <disable_collisions link1="meta1_1" link2="meta3_1" reason="Never"/>
+    <disable_collisions link1="meta1_1" link2="meta4_1" reason="Never"/>
+    <disable_collisions link1="meta2_1" link2="meta3_1" reason="Never"/>
+    <disable_collisions link1="meta2_1" link2="meta4_1" reason="Never"/>
+    <disable_collisions link1="meta3_1" link2="meta4_1" reason="Never"/>
+    <disable_collisions link1="mp1_1" link2="pp1_1" reason="Adjacent"/>
+    <disable_collisions link1="mp2_1" link2="pp2_1" reason="Adjacent"/>
+    <disable_collisions link1="mp3_1" link2="pp3_1" reason="Adjacent"/>
+    <disable_collisions link1="mp4_1" link2="pp4_1" reason="Adjacent"/>
+</robot>
